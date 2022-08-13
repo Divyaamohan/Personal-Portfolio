@@ -118,12 +118,12 @@ let swiperPortfolio = new Swiper(".portfolio__container", {
     sections.forEach(current=>{
         const sectionHeight = current.offsetHeight
         const sectionTop = current.offsetTop -50;
-        sectionID = current.getAttribute('id')
+        sectionId = current.getAttribute('id')
         if(scrollY> sectionTop && scrollY <= sectionTop +sectionHeight){
             document.querySelector('.nav__menu a[href*='+ sectionId +']').classList.add('active-link')
         }
         else{
-            document.querySelectorAll('.nav__menu a[href*=' +sectionId +']').classList.remove('active-link')
+            document.querySelector('.nav__menu a[href*=' + sectionId +']').classList.remove('active-link')
         }
     })
   }
@@ -153,7 +153,7 @@ let swiperPortfolio = new Swiper(".portfolio__container", {
   const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon':'uil-sun'
 
   if(selectedTheme){
-    document.body.classlist[selectedTheme === 'dark'?'add':'remove'](darkTheme)
+    document.body.classList[selectedTheme === 'dark'?'add':'remove'](darkTheme)
     themeButton.classList[selectedIcon === 'uil-moon'?'add':'remove'](iconTheme)
   }
   
